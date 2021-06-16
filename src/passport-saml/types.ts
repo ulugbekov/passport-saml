@@ -40,7 +40,7 @@ export interface Profile {
 
 export interface RequestWithUser extends express.Request {
   samlLogoutRequest: any;
-  user?: Profile;
+  samlUser?: Profile;
 }
 
 export type VerifiedCallback = (
