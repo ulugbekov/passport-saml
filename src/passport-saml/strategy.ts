@@ -152,7 +152,7 @@ export abstract class AbstractStrategy extends PassportStrategy {
             const RelayState =
               (req.query && req.query.RelayState) || (req.body && req.body.RelayState);
             this.redirect(
-              await this._saml.getLogoutUrlAsync(req.samlUser as Profile, RelayState, options)
+              await this._saml.getLogoutUrlAsync(req.user as Profile, RelayState, options)
             );
           } catch (err) {
             this.error(err);
